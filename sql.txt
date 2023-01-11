@@ -1,0 +1,11 @@
+a. Select Top 5 status
+    From tasks
+    Where status = 'Completed"';
+
+b. Select *
+    From tasks  
+        Where title '%manager%';
+
+c. Update tasks
+    set status = 'Completed'
+        Where status = 'Pending' OR status = 'To Do' 
