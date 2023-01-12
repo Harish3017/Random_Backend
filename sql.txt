@@ -8,4 +8,4 @@ b. Select *
 
 c. Update tasks
     set status = 'Completed'
-        Where status = 'Pending' OR status = 'To Do' 
+        Where status = 'Pending' OR status = 'To Do'
