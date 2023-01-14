@@ -5,7 +5,7 @@ exports.getAll = async(req,res) =>{
     try{
         const tasks = await Task.find();
         res.status(200).json({
-            message: "All Task Successfully Get",
+            message: "success",
             data:tasks,
         });
     }
@@ -30,7 +30,7 @@ exports.getSingle = async(req,res) =>{
             });
         } else{
             res.status(200).json({
-                message: "Successfully Get the task",
+                message: "success",
                 data:task,
             })
         }
