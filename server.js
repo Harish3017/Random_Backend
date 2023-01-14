@@ -24,6 +24,7 @@ const connectDatabase = async () => {
       console.log("Database connection error");
     }
   };
+console.log("Connected DB:"+connectionString);
 mongoose.set('strictQuery', false);
 connectDatabase();
 app.listen(process.env.PORT, () =>{

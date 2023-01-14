@@ -1,4 +1,4 @@
-const Task = require("../models/task");
+const Task = require("../models/Task.js");
 
 //get all Tasks
 exports.getAll = async(req,res) =>{
@@ -43,20 +43,21 @@ exports.getSingle = async(req,res) =>{
 }
 
 //Create a task
-exports.addTask = async(req,res) =>{
-
-    const newTask = new Task(req.body);
-    await newTask.save((error)=>{
-        if(error) {
-            res.status(500).json({
-                message:"error"
-            });
-        } else {
-            res.status(201).json({
-                message: "Task Added Succesfully",
-            });
-        }
-    });
+exports.create = async(req,res) =>{
+    try{
+       
+        const task = await Task.create(req.body);
+        res.status(201).json({
+            message: "success",
+            data: task
+        });
+        
+    }catch(error){
+        console.log(error);
+        res.status(400).json({
+            message:"Error"
+        })
+    }
 }
 
 //edit task

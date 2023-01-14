@@ -5,7 +5,7 @@ const taskController = require('../controller/taskController');
 
 router.route('/')
     .post(
-        taskController.addTask
+        taskController.create
     )
     .get(
         taskController.getAll
